@@ -29,5 +29,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Python Run
       run: |
-        python ad_props.py "config.json"
-      working-directory: ${{ github.workspace }}
+        python ad_props.py config.json
