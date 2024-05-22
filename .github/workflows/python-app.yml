@@ -30,3 +30,4 @@ jobs:
     - name: Python Run
       run: |
         python ad_props.py "config.json"
+      working-directory: ${{ github.workspace }}
