@@ -1,0 +1,3 @@
+requests
+azure-mgmt-datafactory
+azure-identity
