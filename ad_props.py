@@ -15,11 +15,12 @@ def get_access_token():
     return token.token
 
 class TestAzureDataFactory(unittest.TestCase):
+    config_path = ""
 
     @classmethod
     def setUpClass(cls):
-        config_path = sys.argv[1]
-        config = load_config(config_path)
+        config_path = cls.config_path
+        config = load_config(str(config_path))
         cls.subscription_id = config['subscription_id']
         cls.resource_group_name = config['resource_group_name']
         cls.data_factory_name = config['data_factory_name']
@@ -108,8 +109,8 @@ class TestAzureDataFactory(unittest.TestCase):
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 2:
-        print("Usage: python script.py <config_file_path>")
-        sys.exit(1)
+    if len(sys.argv) > 1:
+        TestAzureDataFactory.config_path = sys.argv.pop()
 
     unittest.main()
+        
