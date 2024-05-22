@@ -1,0 +1,25 @@
+{
+    "subscription_id": "c15d1375-675d-49d7-bbd2-4aaf95f666ab",
+    "resource_group_name": "dev-icint-hrfra-001-rg",
+    "data_factory_name": "dev-icint-hrfra-001-adf",
+    "linked_services": [
+        "ls_hrfra_AzureBlobStorage",
+        "ls_hrfra_AzureSqlDatabase",
+        "ls_hrfra_Oracle",
+        "ls_hrfra_adf_key_vault"
+    ],
+    "integration_runtimes": [
+        "SHIR-Sandbox-banner-int",
+        "dev-icint-hrfra-001-shir"
+    ],
+    "pipeline_name": [
+        "pl_child",
+        "pl_Logging",
+        "pl_Master"
+    ],
+    "dataset_name": [
+        "ds_AzureSQLConfig",
+        "ds_OracleParametrizedTable",
+        "ds_SinkStorage"
+    ]
+}
