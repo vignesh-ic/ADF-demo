@@ -27,6 +27,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Azure Setup
+      uses: azure/login@v1
+          with:
+            tenant-id: "2b897507-ee8c-4575-830b-4f8267c3d307"
+            subscription-id: "c15d1375-675d-49d7-bbd2-4aaf95f666ab"
+            enable-AzPSSession: true 
+            
     - name: Python Run
       run: |
         python ad_props.py config.json
